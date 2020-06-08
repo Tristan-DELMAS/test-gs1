@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2em 0;
+  .paginator {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: baseline;
+    div {
+      display: flex;
+      align-items: baseline;
+      padding: 0 1em;
+      span {
+        margin-right: 1em;
+      }
+      mat-form-field {
+        width: 40px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  :host {
+    align-items: stretch;
+  }
+}

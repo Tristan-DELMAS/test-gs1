@@ -1,0 +1,25 @@
+<mat-card>
+  <form [formGroup]="contactForm" #contact="ngForm" (ngSubmit)="onValidate()">
+    <mat-form-field>
+      <input matInput required formControlName="lastname" name="lastname" placeholder="Nom">
+      <mat-error *ngIf="contactForm.controls['lastname'].invalid && contactForm.controls['lastname'].touched">Le nom renseigné doit être réel</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required formControlName="firstname" name="firstname" placeholder="Prénom">
+      <mat-error *ngIf="contactForm.controls['firstname'].invalid && contactForm.controls['firstname'].touched">Le prénom renseigné doit être réel</mat-error>
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <mat-label>Date de naissance</mat-label>
+      <input matInput required formControlName="birthDate" name="birthDate" [matDatepicker]="calendar">
+      <mat-datepicker-toggle matSuffix [for]="calendar"></mat-datepicker-toggle>
+      <mat-datepicker #calendar></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required formControlName="email" name="email" placeholder="Email">
+      <mat-error *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched">L'adresse mail doit-être valide</mat-error>
+    </mat-form-field>
+    <div>
+      <button mat-raised-button color="accent">Valider</button>
+    </div>
+  </form>
+</mat-card>

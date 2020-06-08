@@ -1,0 +1,9 @@
+<mat-card>
+  <img class="big" [src]="getPicture()" alt="{{character.name}}"/>
+  <img class="small" [src]="getSmallPicture()" alt="{{character.name}}"/>
+  <div>
+    <h2>{{character.name}}</h2>
+    <span>Apparait dans {{character.comics}} comics à travers {{character.series}} séries</span>
+    <p>{{(character.description.length>6)? (character.description | slice:0:150)+'...':(character.description) }}</p>
+  </div>
+</mat-card>

@@ -1,0 +1,5 @@
+<app-header></app-header>
+<main>
+  <app-contact-form *ngIf="!showMarvel"></app-contact-form>
+  <app-characters-list *ngIf="showMarvel"></app-characters-list>
+</main>

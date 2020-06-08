@@ -1,0 +1,23 @@
+<div class="paginator">
+  <button mat-stroked-button color="primary" (click)="previousPage()" [disabled]="!prev">&lt; Précédents</button>
+  <div>
+    <span>Aller à la page</span>
+    <mat-form-field>
+      <input matInput type="number" [(ngModel)]="currentPage" (keydown)="isSend($event)"/>
+    </mat-form-field>
+    <button mat-button color="accent" (click)="previousPage()">Go</button>
+  </div>
+  <button mat-stroked-button color="primary" (click)="nextPage()" [disabled]="!next">Suivants &gt;</button>
+</div>
+<app-character *ngFor="let character of characters | async" [character]="character"></app-character>
+<div class="paginator">
+  <button mat-stroked-button color="primary" (click)="previousPage()" [disabled]="!prev">Précédents</button>
+  <div>
+    <span>Aller à la page</span>
+    <mat-form-field>
+      <input matInput type="number" [(ngModel)]="currentPage" (keydown)="isSend($event)"/>
+    </mat-form-field>
+    <button mat-button color="accent" (click)="previousPage()">Go</button>
+  </div>
+  <button mat-stroked-button color="primary" (click)="nextPage()" [disabled]="!next">Suivants</button>
+</div>

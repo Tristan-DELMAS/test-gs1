@@ -1,0 +1,43 @@
+:host {
+  align-self: center;
+  display: flex;
+  padding: 1em;
+  height: calc(100vh - 64px);
+  mat-card {
+    max-width: 825px;
+    width: 95%;
+    margin: auto;
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      mat-form-field {
+        width: 49%;
+        &:nth-child(3) {
+          width: 20%;
+        }
+        &:nth-child(4) {
+          width: 78%;
+        }
+      }
+      >div {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  :host {
+    min-height: calc(100vh - 64px);
+    height: auto;
+    mat-card {
+      form {
+        mat-form-field {
+          width: 100%!important;
+        }
+      }
+    }
+  }
+}
